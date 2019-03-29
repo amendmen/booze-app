@@ -1,0 +1,28 @@
+<h1>Add to list</h1>
+<form [formGroup]="appForm" class="example-form">
+  <button mat-raised-button color="primary" [disabled]="appForm.invalid" (click)="save()">
+      <mat-icon>done</mat-icon>Save</button>
+      <button mat-raised-button color="warn" (click)="cancel()" type="reset">
+          <mat-icon>cancel</mat-icon>Cancel</button>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="name" formControlName="name">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput formControlName="description" placeholder="Description"></textarea>
+  </mat-form-field>
+  <input type="file" multiple (change)="fileSelected($event)" accept=".pdf,.gif,.jpeg">
+
+  <div>
+    <div *ngFor="let img of files; let i = index;">
+      <!-- <button class="removeButton" mat-mini-fab (click)="removeFiles(i)">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+      <img [src]="img.src" alt="" class="bannerImage"> -->
+      <div>{{img.name}} <button  mat-icon-button (click)="removeFiles(i)">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</form>

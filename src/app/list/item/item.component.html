@@ -1,0 +1,13 @@
+<h1>{{data.name}}</h1>
+<h2>{{data.description}}</h2>
+
+<div *ngIf="images.length">
+    <!-- <span *ngFor="let img of data.files"> -->
+        <!-- <img [src]="img.src" alt="" class="bannerImage" style="max-height: 200px; margin-right: 10px"> -->
+        <app-image-viewer
+          [images]="images"
+          [idContainer]="'idOnHTML'"
+          [loadOnInit]="true"></app-image-viewer>
+    <!-- </span> -->
+   
+  </div>

@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+.cdk-overlay-pane {
+    width: 80%;
+    height: 90%;
+}
+.image-gallery-2 {
+    height: 500px;
+}
